@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Generator</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+$(document).ready(function(){
+    let entryCount = 1;
+    
+    $('#add-week').click(function(){
+        entryCount++;
+        let newEntry = `
+            <div class="schedule-entry">
+                <label for="day${entryCount}">Day:</label>
+                <input type="text" name="day${entryCount}" class="day" id="day${entryCount}">
+                <br><br>
+                <label for="room${entryCount}">Room ${entryCount}:</label>
+                <input type="text" name="room${entryCount}" class="room" id="room${entryCount}">
+                <label for="course${entryCount}">Course ${entryCount}:</label>
+                <input type="text" name="course${entryCount}" class="course" id="course${entryCount}">
+                <label for="teacher${entryCount}">Teacher ${entryCount}:</label>
+                <input type="text" name="teacher${entryCount}" class="teacher" id="teacher${entryCount}">
+                <label for="time_slot${entryCount}">Time Slot ${entryCount}:</label>
+                <input type="text" name="time_slot${entryCount}" class="time-slot" id="time_slot${entryCount}">
+                <br><br>
+                <button type="button" class="add-entry">Add Entry</button>
+            </div>
+        `;
+        $('#schedule-entries').append(newEntry);
+    });
+
+    // Dynamically adding entry when clicking on 'Add Entry'
+    $(document).on('click', '.add-entry', function(){
+        entryCount++;
+        let newEntry = `
+            <div class="schedule-entry">
+                <label for="room${entryCount}">Room ${entryCount}:</label>
+                <input type="text" name="room${entryCount}" class="room" id="room${entryCount}">
+                <label for="course${entryCount}">Course ${entryCount}:</label>
+                <input type="text" name="course${entryCount}" class="course" id="course${entryCount}">
+                <label for="teacher${entryCount}">Teacher ${entryCount}:</label>
+                <input type="text" name="teacher${entryCount}" class="teacher" id="teacher${entryCount}">
+                <label for="time_slot${entryCount}">Time Slot ${entryCount}:</label>
+                <input type="text" name="time_slot${entryCount}" class="time-slot" id="time_slot${entryCount}">
+                <br><br>
+                <button type="button" class="add-entry">Add Entry</button>
+            </div>
+        `;
+        $(this).parent().after(newEntry);
+    });
+});
+
+    </script>
+</head>
+
+<body>
+    <form id="schedule-form" action="/generate_json" method="post">
+        <div id="schedule-entries">
+            <div class="schedule-entry">
+                <label for="day1">Day:</label>
+                <input type="text" name="day1" class="day" id="day1">
+                <br><br>
+                <label for="room1">Room:</label>
+                <input type="text" name="room1" class="room" id="room1">
+                <label for="course1">Course:</label>
+                <input type="text" name="course1" class="course" id="course1">
+                <label for="teacher1">Teacher:</label>
+                <input type="text" name="teacher1" class="teacher" id="teacher1">
+                <label for="time_slot1">Time Slot:</label>
+                <input type="text" name="time_slot1" class="time-slot" id="time_slot1">
+                <button type="button" class="add-entry">Add Entry</button>
+
+                <br><br>
+            </div>
+        </div>
+        <button type="button" id="add-week">Add New Week</button>
+        <br><br>
+        <input type="submit" value="Generate JSON">
+    </form>
+</body>
+
+</html>

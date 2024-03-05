@@ -1,0 +1,99 @@
+{
+    "schedule": [
+        {
+            "day": "Saturday",
+            "time_slots": [
+                {
+                    "time": "1",
+                    "rooms": [
+                        {
+                            "room": "1",
+                            "course": "1",
+                            "teacher": "1"
+                        }
+                    ]
+                },
+                {
+                    "time": "2",
+                    "rooms": [
+                        {
+                            "room": "2",
+                            "course": "2",
+                            "teacher": "2"
+                        }
+                    ]
+                },
+                {
+                    "time": "3",
+                    "rooms": [
+                        {
+                            "room": "3",
+                            "course": "3",
+                            "teacher": "3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "day": "sUNDAY",
+            "time_slots": [
+                {
+                    "time": "1",
+                    "rooms": [
+                        {
+                            "room": "1",
+                            "course": "1",
+                            "teacher": "1"
+                        }
+                    ]
+                },
+                {
+                    "time": "2",
+                    "rooms": [
+                        {
+                            "room": "2",
+                            "course": "2",
+                            "teacher": "2"
+                        }
+                    ]
+                },
+                {
+                    "time": "3",
+                    "rooms": [
+                        {
+                            "room": "3",
+                            "course": "3",
+                            "teacher": "3"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "day": "mOND",
+            "time_slots": [
+                {
+                    "time": "1",
+                    "rooms": [
+                        {
+                            "room": "1",
+                            "course": "1",
+                            "teacher": "1"
+                        }
+                    ]
+                },
+                {
+                    "time": "3",
+                    "rooms": [
+                        {
+                            "room": "2",
+                            "course": "2",
+                            "teacher": "2"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

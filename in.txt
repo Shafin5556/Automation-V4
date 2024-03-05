@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule Generator</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form action="/generate_json" method="post">
+        <label for="day">Day:</label>
+        <input type="text" name="day" id="day">
+        <br><br>
+        <label for="time_slot">Time Slot:</label>
+        <input type="text" name="time_slot" id="time_slot">
+        <br><br>
+
+        <table>
+            <tr>
+                <th colspan="3">8:30-9:30</th>
+                <th colspan="3">9:30-10:30</th>
+                <th colspan="3">10:30-11:30</th>
+            </tr>
+            <tr>
+                <th>Room</th>
+                <th>Course</th>
+                <th>Teacher</th>
+                <th>Room</th>
+                <th>Course</th>
+                <th>Teacher</th>
+                <th>Room</th>
+                <th>Course</th>
+                <th>Teacher</th>
+            </tr>
+            <tr>
+                <td><input type="text" name="room1" id="room1"></td>
+                <td><input type="text" name="course1" id="course1"></td>
+                <td><input type="text" name="teacher1" id="teacher1"></td>
+
+                <td><input type="text" name="room2" id="room2"></td>
+                <td><input type="text" name="course2" id="course2"></td>
+                <td><input type="text" name="teacher2" id="teacher2"></td>
+                
+                <td><input type="text" name="room3" id="room3"></td>
+                <td><input type="text" name="course3" id="course3"></td>
+                <td><input type="text" name="teacher3" id="teacher3"></td>
+            </tr>
+        </table>
+        <br><br>
+        <input type="submit" value="Generate JSON">
+    </form>
+</body>
+</html>

@@ -19,6 +19,8 @@ def save_schedule(schedule):
 def index():
     return render_template('index.html')
 
+
+#sds
 @app.route('/generate_json', methods=['POST'])
 def generate_json():
     schedule = load_schedule()
